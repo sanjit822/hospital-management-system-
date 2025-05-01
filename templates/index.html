@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hospital Management - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f9fc;
+      color: #333;
+    }
+    header {
+      background-color: #007bff;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+    nav {
+      background-color: #0056b3;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .images img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      .images {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Our Hospital</h1>
+    <p>Quality care for a healthier future</p>
+  </header>
+<nav>
+    <a href="{{ url_for('index') }}" id="nav-index">Home</a>
+    <a href="{{ url_for('about') }}" id="nav-about">About Us</a>
+    <a href="{{ url_for('appointment') }}" id="nav-appointment">appointment</a>
+    <a href="{{ url_for('register') }}" id="nav-register">register</a>
+    <a href="{{ url_for('schedule') }}" id="nav-schedule">schedule</a>
+    <a href="{{ url_for('services') }}" id="nav-services">Services</a>
+    <a href="{{ url_for('contact') }}" id="nav-contact">Contact Us</a>
+  </nav>
+  
+  
+
+  <section>
+    <h2>Home Page</h2>
+    <p>Explore our modern facilities and expert medical staff dedicated to your well-being.</p>
+    <div class="images">
+      <img src="{{ url_for('static', filename='assets/hospital1.jpg ') }}" alt="Doctor 1">
+      <img src="{{ url_for('static', filename='assets/hospital2.png ') }}" alt="Doctor 2">
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hospital Management System. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Example script (can be expanded as needed)
+    console.log("Welcome to the Hospital Home Page");
+  </script>
+
+</body>
+</html>

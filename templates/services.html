@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services - Hospital Management</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #17a2b8;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #138496;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #17a2b8;
+    }
+    .service-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .service {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+    .service img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      background-color: #17a2b8;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      .service-list {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Our Medical Services</h1>
+    <p>Comprehensive care with compassion and innovation</p>
+  </header>
+
+  <nav>
+    <a href="{{ url_for('index') }}" id="nav-index">Home</a>
+    <a href="{{ url_for('about') }}" id="nav-about">About Us</a>
+    <a href="{{ url_for('appointment') }}" id="nav-appointment">appointment</a>
+    <a href="{{ url_for('register') }}" id="nav-register">register</a>
+    <a href="{{ url_for('schedule') }}" id="nav-schedule">schedule</a>
+    <a href="{{ url_for('services') }}" id="nav-services">Services</a>
+    <a href="{{ url_for('contact') }}" id="nav-contact">Contact Us</a>
+  </nav>
+  
+
+  <section>
+    <h2>What We Offer</h2>
+    <div class="service-list">
+      <div class="service">
+        <img src="{{ url_for('static', filename='assets/constalant1.jpg') }}" alt="Cardiology-service">
+        <h3>Cardiology</h3>
+        <p>Advanced heart care with diagnostic and treatment options by our cardiac specialists.</p>
+      </div>
+      <div class="service">
+        <img src="{{ url_for('static', filename='assets/doctor1.png ') }}" alt="Radiology-service">
+        <h3>Radiology</h3>
+        <p>State-of-the-art imaging services including MRI, CT, X-ray, and Ultrasound.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hospital Management System. All rights reserved.</p>
+  </footer>
+
+  <script>
+    console.log("Services Page Loaded");
+  </script>
+
+</body>
+</html>

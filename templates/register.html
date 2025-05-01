@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patient Registration - Hospital Management</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffefc;
+      color: #333;
+    }
+    header {
+      background-color: #6f42c1;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #5a32a3;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #6f42c1;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 30px auto;
+      width: 100%;
+      max-width: 500px;
+    }
+    input, select {
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    button {
+      padding: 12px;
+      background-color: #6f42c1;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .images img {
+      width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #6f42c1;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Patient Registration</h1>
+    <p>Create your profile with us to access quality care</p>
+  </header>
+
+  <nav>
+    <a href="{{ url_for('index') }}" id="nav-index">Home</a>
+    <a href="{{ url_for('about') }}" id="nav-about">About Us</a>
+    <a href="{{ url_for('appointment') }}" id="nav-appointment">appointment</a>
+    <a href="{{ url_for('register') }}" id="nav-register">register</a>
+    <a href="{{ url_for('schedule') }}" id="nav-schedule">schedule</a>
+    <a href="{{ url_for('services') }}" id="nav-services">Services</a>
+    <a href="{{ url_for('contact') }}" id="nav-contact">Contact Us</a>
+  </nav>
+  
+
+  <section>
+    <h2>Register Now</h2>
+    <form onsubmit="registerPatient(event)">
+      <input type="text" id="fullName" placeholder="Full Name" required />
+      <input type="email" id="regEmail" placeholder="Email Address" required />
+      <input type="tel" id="regPhone" placeholder="Phone Number" required />
+      <input type="text" id="address" placeholder="Address" required />
+      <select id="gender" required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+      <input type="date" id="dob" required />
+      <button type="submit">Register</button>
+    </form>
+
+    <div class="images">
+      <img src="{{ url_for('static', filename='assets/register1.png ') }}" alt="Patient register counter">
+      <img src="{{ url_for('static', filename='assets/register2.png ') }}" alt="Health care form ">
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hospital Management System. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function registerPatient(event) {
+      event.preventDefault();
+      const name = document.getElementById("fullName").value;
+      const email = document.getElementById("regEmail").value;
+      const phone = document.getElementById("regPhone").value;
+      const address = document.getElementById("address").value;
+      const gender = document.getElementById("gender").value;
+      const dob = document.getElementById("dob").value;
+
+      if (name && email && phone && address && gender && dob) {
+        alert("Thank you, " + name + "! You have been successfully registered.");
+        document.querySelector("form").reset();
+      } else {
+        alert("Please complete all required fields.");
+      }
+    }
+  </script>
+
+</body>
+</html>
